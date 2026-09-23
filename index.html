@@ -1,0 +1,420 @@
+<title>Filippo Ferrabue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #f4f6f3;
+    --surface: #ffffff;
+    --ink: #1a2119;
+    --ink-soft: #4f5b4c;
+    --ink-faint: #838f7e;
+    --rule: #dde2d9;
+    --rule-soft: #eaeee7;
+    --accent: #2f5d45;
+    --accent-soft: #e2ebe5;
+    --code-bg: #edf1ec;
+
+    --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0f1310;
+      --surface: #161b15;
+      --ink: #e6ece3;
+      --ink-soft: #a4b09f;
+      --ink-faint: #74806f;
+      --rule: #262e24;
+      --rule-soft: #1c221b;
+      --accent: #7ab08d;
+      --accent-soft: #1b2b21;
+      --code-bg: #0a0d09;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0f1310;
+    --surface: #161b15;
+    --ink: #e6ece3;
+    --ink-soft: #a4b09f;
+    --ink-faint: #74806f;
+    --rule: #262e24;
+    --rule-soft: #1c221b;
+    --accent: #7ab08d;
+    --accent-soft: #1b2b21;
+    --code-bg: #0a0d09;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding-inline: 24px;
+    padding-block: 72px 96px;
+  }
+
+  /* ── Masthead ─────────────────────────────── */
+
+  .masthead { display: flex; flex-direction: column; gap: 18px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(34px, 7vw, 46px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .tagline {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 34em;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .links a {
+    font-family: var(--mono);
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    padding: 7px 14px;
+    border-radius: 3px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .links a:hover { border-color: var(--accent); color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ── Sections ─────────────────────────────── */
+
+  section { margin-top: 64px; }
+
+  h2 {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin: 0 0 16px; max-width: 65ch; }
+  p:last-child { margin-bottom: 0; }
+
+  a.inline { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  /* ── Project ──────────────────────────────── */
+
+  .project {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 26px;
+  }
+
+  .project-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 16px;
+    margin-bottom: 14px;
+  }
+
+  .project h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .stamp {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 9px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+
+  .tags span {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    border: 1px solid var(--rule);
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  figure { margin: 20px 0 0; }
+
+  figcaption {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 14px 16px;
+    overflow-x: auto;
+  }
+
+  pre .c { color: var(--ink-faint); }
+
+  /* ── Education ────────────────────────────── */
+
+  .entry { display: flex; flex-direction: column; gap: 4px; }
+  .entry + .entry { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--rule-soft); }
+
+  .entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+  }
+
+  .entry h3 { font-size: 17px; font-weight: 600; margin: 0; }
+
+  .when {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .entry p { color: var(--ink-soft); font-size: 15px; margin: 6px 0 0; }
+
+  /* ── Skills ───────────────────────────────── */
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; }
+  .skills h3 {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  .skills ul { list-style: none; margin: 0; padding: 0; }
+  .skills li { font-size: 15px; color: var(--ink-soft); padding: 2px 0; }
+
+  /* ── Footer ───────────────────────────────── */
+
+  footer {
+    margin-top: 72px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 16px;
+  }
+
+  footer a { color: var(--ink-faint); }
+
+  @media (max-width: 560px) {
+    .wrap { padding-block: 52px 72px; }
+    section { margin-top: 52px; }
+    .project { padding: 20px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Electronics &amp; Automation Engineering</div>
+    <h1>Filippo Ferrabue</h1>
+    <div class="meta">
+      <span>Università degli Studi di Bergamo</span>
+      <span>·</span>
+      <span>Busan, South Korea</span>
+    </div>
+    <nav class="links">
+      <a href="https://github.com/filippoferrabue">GitHub</a>
+      <a href="mailto:filippoferrabue@gmail.com">Email</a>
+      <a href="#">LinkedIn</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>
+      I am a second-year student in the Electronics and Automation Engineering
+      programme (TEA) at the University of Bergamo, spending this semester at
+      Dong-A University in Busan.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>University Student Information System</h3>
+        <span class="stamp">MIPS Assembly</span>
+      </div>
+
+      <p>
+        A complete student records manager written entirely in MIPS-32 assembly
+        for the MARS simulator: 17 operations covering insertion, search, sorting,
+        credit-weighted averages and reporting, over a database of up to 100
+        students with 20 exams each.
+      </p>
+      <p>
+        The interesting constraint is that MIPS offers no structs and no dynamic
+        allocation, so every data structure had to be built from raw memory.
+        Student records live in parallel arrays sharing one physical index;
+        transcripts live in a 2D matrix flattened into 2000 sequential slots,
+        with each address computed at runtime. Deletion clears an
+        <code>active</code> flag rather than shifting memory, keeping removal at
+        O(1).
+      </p>
+
+      <figure>
+        <figcaption>Static allocation in the .data segment</figcaption>
+<pre>student_id       .space   400     <span class="c"># 100 × 4 B</span>
+student_name     .space  2000     <span class="c"># 100 × 20 B, ASCIIZ</span>
+student_active   .space   400     <span class="c"># 1 = active, 0 = deleted</span>
+exam_name        .space 92000     <span class="c"># 2000 slots × 46 B</span>
+
+<span class="c"># offset of exam k for student i</span>
+<span class="c">#   words   → ((i * 20) + k) * 4</span>
+<span class="c">#   strings → ((i * 20) + k) * 46</span></pre>
+      </figure>
+
+      <div class="tags">
+        <span>MIPS-32</span>
+        <span>MARS 4.5</span>
+        <span>Memory layout</span>
+        <span>FPU arithmetic</span>
+        <span>Recursion</span>
+      </div>
+
+      <p style="margin-top:18px">
+        <a class="inline" href="https://github.com/filippoferrabue/my-projects/tree/main/MARS-Project-Computer-Architecture">Source code and technical report →</a>
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Dong-A University — Busan, South Korea</h3>
+        <span class="when">2026</span>
+      </div>
+      <p>
+        Erasmus exchange semester. Signals and Systems, Digital Control, Control
+        System Design, Fundamentals of AI Programming for Engineering
+        Applications, Accounting Principles and business strategy.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Università degli Studi di Bergamo — Dalmine</h3>
+        <span class="when">2025 —</span>
+      </div>
+      <p>
+        BSc in Electronics and Automation Engineering (TEA). Computer
+        architecture, electronics, automatic control, mathematical analysis.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Programming</h3>
+        <ul>
+          <li>C++</li>
+          <li>MIPS assembly</li>
+          <li>Python</li>
+          <li>MATLAB</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Engineering</h3>
+        <ul>
+          <li>Digital control</li>
+          <li>Signal processing</li>
+          <li>Electronics</li>
+          <li>AutoCAD — basic</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <ul>
+          <li>Italian — native</li>
+          <li>English — C2, Cambridge</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Filippo Ferrabue</span>
+    <span><a href="https://github.com/filippoferrabue">github.com/filippoferrabue</a></span>
+  </footer>
+
+</div>
